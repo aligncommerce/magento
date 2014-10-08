@@ -1,3 +1,5 @@
+The Align Commerce payment gateway for Magento will allow you to accept payments on your Magento installation in the form of local currency via bank transfers and/or via Bitcoin
+
 ==== Align Commerce Payment Gateway for Magento ====
 
 Plugin Name: Magento - Align Commerce Payment Gateway
@@ -45,10 +47,19 @@ Place your Align Commerce Email in the appropriate box
 Place your Align Commerce Password in the appropriate box
 Place your Client ID in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
 Place your Secret Key in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+Save the configuration at this poin
+
+Step 7 - Save to enable the currency options
+
+After the configuration page refreshes, you can continue filling up the settings.
 On the "Payment from Applicable Currencies" choose all currencies that you'd like to accept
 On the "Payment from Specific Countries" choose all countries you'd like to allow to pay using Align Commerce
-Save the Configuration	
+Save the Configuration settings for the last time.
 
-Note:  In Magento, return URL and IPN URL should be in the format below.
-Return URL: http://yoursite.com/index.php/bitcoin/
-IPN URL: http://yoursite.com/index.php/bitcoin/ipn
+Step 8 - Set up your IPN on https://aligncommerce.com/dashboard/keys
+
+Set your return URL and IPN URL to the following format. Return URL: http://yoursite.com/index.php/bitcoin/ IPN URL: http://yoursite.com/index.php/bitcoin/ipn
+
+Step 9 - Test your new checkout page
+
+
