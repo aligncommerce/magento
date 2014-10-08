@@ -1,8 +1,3 @@
-magento
-=======
-
-The Align Commerce payment gateway for Magento will allow you to accept payments on your Magento installation in the form of local currency via bank transfers and/or via Bitcoin
-
 ==== Align Commerce Payment Gateway for Magento ====
 
 Plugin Name: Magento - Align Commerce Payment Gateway
@@ -19,7 +14,7 @@ The Align Commerce payment gateway for Magento will allow you to accept payments
 == Installation ==
 
 Step 1 - Check Permissions
-Make sure the ‚Äò‚Äòapp‚Äô‚Äô and ‚Äúlib‚Äù directories of your Magento installation and all subdirectories have full write permissions. If not, set permissions on the each directory to 777 or 0777.
+Make sure the ëëappíí and ìlibî directories of your Magento installation and all subdirectories have full write permissions. If not, set permissions on the each directory to 777 or 0777.
 Important! Change all permissions back after installation.
 Read more info re permission at:
 http://www.magentocommerce.com/wiki/magento_filesystem_permissions
