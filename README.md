@@ -18,6 +18,10 @@ The Align Commerce payment gateway for Magento will allow you to accept payments
 
 == Installation ==
 
+Getting Started:
+You will need to generate your API keys - https://aligncommerce.com/dashboard/keys 
+You will also need your Align Commerce dashboard email and password on your plugin settings
+
 Step 1 - Check Permissions
 Make sure the ‘‘app’’ and “lib” directories of your Magento installation and all subdirectories have full write permissions. If not, set permissions on the each directory to 777 or 0777.
 Important! Change all permissions back after installation.
