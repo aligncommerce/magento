@@ -36,6 +36,19 @@ Go to System - Cache Management. Clear the store cache.
 Step 5 - Re-login
 Log out and log back into Magento Admin Panel.
 
+Step 6 - Post Uploading of Files
+Head over to System - Configuration.
+Once inside the configuration page, head over the the Sales section on the sidebar then click on "Payment Methods"
+Set Enabled to "Yes"
+On the "Title" field - place your checkout label for the specific payment method
+Place your Align Commerce Email in the appropriate box
+Place your Align Commerce Password in the appropriate box
+Place your Client ID in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+Place your Secret Key in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+On the "Payment from Applicable Currencies" choose all currencies that you'd like to accept
+On the "Payment from Specific Countries" choose all countries you'd like to allow to pay using Align Commerce
+Save the Configuration	
+
 Note:  In Magento, return URL and IPN URL should be in the format below.
 Return URL: http://yoursite.com/index.php/bitcoin/
 IPN URL: http://yoursite.com/index.php/bitcoin/ipn
