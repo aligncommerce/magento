@@ -26,7 +26,7 @@ You will also need your Align Commerce dashboard email and password on your plug
   * http://www.magentocommerce.com/wiki/magento_filesystem_permissions
 
 ### Step 2 - Disable Compilation
-### Log into Magento Admin Panel and go to System >> Tools >> Compilation and disable the compilation.
+- Log into Magento Admin Panel and go to System >> Tools >> Compilation and disable the compilation.
 - After step 5 you can run the compilation process again.
 
 ### Step 3 - Upload Files
