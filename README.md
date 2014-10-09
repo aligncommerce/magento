@@ -75,9 +75,9 @@ Place your Align Commerce Email in the appropriate box
 
 Place your Align Commerce Password in the appropriate box
 
-Place your Client ID in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+Place your Client ID in the appropriate field - you get this from the https://aligncommerce.com/dashboard/keys page
 
-Place your Secret Key in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+Place your Secret Key in the appropriate field - you get this from the https://aligncommerce.com/dashboard/keys page
 
 Save the configuration at this point before proceeding to the next steps
 
