@@ -20,7 +20,7 @@ You will need to generate your API keys - https://aligncommerce.com/dashboard/ke
 You will also need your Align Commerce dashboard email and password on your plugin settings
 
 Step 1 - Check Permissions
-Make sure the ëëappíí and ìlibî directories of your Magento installation and all subdirectories have full write permissions. If not, set permissions on the each directory to 777 or 0777.
+Make sure the ‚Äò‚Äòapp‚Äô‚Äô and ‚Äúlib‚Äù directories of your Magento installation and all subdirectories have full write permissions. If not, set permissions on the each directory to 777 or 0777.
 Important! Change all permissions back after installation.
 Read more info re permission at:
 http://www.magentocommerce.com/wiki/magento_filesystem_permissions
@@ -45,8 +45,8 @@ Set Enabled to "Yes"
 On the "Title" field - place your checkout label for the specific payment method
 Place your Align Commerce Email in the appropriate box
 Place your Align Commerce Password in the appropriate box
-Place your Client ID in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
-Place your Secret Key in the appropriate field - you get his from the https://aligncommerce.com/dashboard/keys page
+Place your Client ID in the appropriate field - you get this from the https://aligncommerce.com/dashboard/keys page
+Place your Secret Key in the appropriate field - you get this from the https://aligncommerce.com/dashboard/keys page
 Save the configuration at this poin
 
 Step 7 - Save to enable the currency options
