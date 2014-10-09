@@ -14,22 +14,26 @@
         }
 
         public function isAvailable($quote = null) {
-            $is_currency = false;
-            $username   = Mage::getStoreConfig('payment/bitcoin_btc/username');
-            $password   = Mage::getStoreConfig('payment/bitcoin_btc/password');
-            $apiconfig = $this->apiConfig();
-            $currency = $apiconfig->getCurrency($username , $password );
+            if(Mage::getStoreConfig('payment/bitcoin_btc/active') && Mage::app()->getFrontController()->getRequest()->getControllerName() != 'multishipping'){
+                $is_currency = false;
+                $username   = Mage::getStoreConfig('payment/bitcoin_btc/username');
+                $password   = Mage::getStoreConfig('payment/bitcoin_btc/password');
+                $apiconfig = $this->apiConfig();
+                $currency = $apiconfig->getCurrency($username , $password );
 
-            $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+                $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
 
-            foreach($currency['currency']['data'] as $curr){
+                foreach($currency['currency']['data'] as $curr){
 
-                if($curr['code'] == $currency_code)
-                    $is_currency = true;
-            }
+                    if($curr['code'] == $currency_code)
+                        $is_currency = true;
+                }
 
-            if(Mage::getStoreConfig('payment/bitcoin_btc/active') && in_array($currency_code,explode(',',Mage::getStoreConfig('payment/bitcoin_btc/allowspecific_currency'))) && $is_currency){
-                return true;
+                if(in_array($currency_code,explode(',',Mage::getStoreConfig('payment/bitcoin_btc/allowspecific_currency'))) && $is_currency){
+                    return true;
+                }else{
+                    return false;
+                }
             }else{
                 return false;
             }
