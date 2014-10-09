@@ -1,4 +1,4 @@
-The Align Commerce payment gateway for Magento will allow you to accept payments on your Magento installation in the form of local currency via bank transfers and/or via Bitcoin
+The Align Commerce payment gateway for Magento will allow you to accept payments on your Magento installation in the form of local currency via bank transfers and/or via bitcoin
 
 # Align Commerce Payment Gateway for Magento
 
