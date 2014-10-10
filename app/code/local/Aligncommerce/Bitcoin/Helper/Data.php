@@ -29,20 +29,24 @@
             $order   = $payment->getOrder();
 
             $total_shipping_amount = $order->getShippingInclTax();
-            $total_qty = $order->getTotalQtyOrdered();
-
-            $shipping_amount = $total_shipping_amount / $total_qty;
             $ordered_items = $order->getAllItems(); 
+            $i = 0;
             foreach($ordered_items as $item){ 
                 if ($item->getProduct()->isVirtual() || $item->getParentItem()) {
                     continue;
                 }  
+                if($i == 0){
+                    $shipping_amount = $total_shipping_amount;
+                }else{
+                    $shipping_amount = 0;
+                }
                 $product_data[] = array(
                     'product_name'     => $item->getName(),
-                    'product_price'    => $item->getPriceInclTax(),
+                    'product_price'    => $item->getRowTotalInclTax() - $item->getDiscountAmount(),  // added to calculate for coupon code 
                     'quantity'         => (int) $item->getQtyOrdered(),
                     'product_shipping' => $shipping_amount
                 );
+                $i++;
             } 
 
             return $product_data;
