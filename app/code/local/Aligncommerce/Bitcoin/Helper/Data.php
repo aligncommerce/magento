@@ -42,7 +42,7 @@
                 }
                 $product_data[] = array(
                     'product_name'     => $item->getName(),
-                    'product_price'    => $item->getRowTotalInclTax() - $item->getDiscountAmount(),
+                    'product_price'    => $item->getRowTotalInclTax() - $item->getDiscountAmount(),  // added to calculate for coupon code 
                     'quantity'         => (int) $item->getQtyOrdered(),
                     'product_shipping' => $shipping_amount
                 );
