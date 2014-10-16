@@ -9,9 +9,9 @@
                     $data = $this->getRequest()->getPost();
 
                     $order = Mage::getModel('sales/order')->loadByIncrementId($data['order_id']);
-                    if($data['status'] == 'success'){
+                    if($data['status'] == 'success' || $data['status'] == 'processing' ){
 
-                        if($data['checkout_type'] == 'btc'){
+                        /*if($data['checkout_type'] == 'btc'){
                             $status = Mage_Sales_Model_Order::STATE_PROCESSING;
                             $order->setState($status, true)->save();
                             $orderId = $order->getIncrementId();
@@ -27,7 +27,7 @@
 
                         $order->addStatusHistoryComment($message,$status)
                         ->setIsCustomerNotified(false)
-                        ->save();
+                        ->save();*/
                         echo Mage::getUrl('checkout/onepage/success');
                     }
                     elseif($data['status'] == 'fail' || $data['status'] == 'cancel')
