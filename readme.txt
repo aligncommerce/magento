@@ -58,7 +58,7 @@ You will also need your Align Commerce dashboard email and password on your plug
 
 ### Step 8 - Set up your IPN on https://aligncommerce.com/dashboard/keys
 - Set your return URL and IPN URL to the following format. 
-  * Return URL: http://yoursite.com/index.php/bitcoin/
-  * IPN URL: http://yoursite.com/index.php/bitcoin/ipn
+  * Return URL: http://merchantsite.com/index.php/bitcoin/
+  * IPN URL: http://merchantsite.com/index.php/bitcoin/ipn
 
 ### Step 9 - Test your new checkout page!
