@@ -51,22 +51,6 @@
                     }
 
 
-                    /*     if($data['status'] == 'success'){
-
-                    if($data['checkout_type'] == 'btc'){
-                    $status = Mage_Sales_Model_Order::STATE_NEW;
-                    $order->setState($status, true)->save();
-                    }
-
-                    $payment = $order->getPayment();
-                    $payment->setTransactionId($data['invoice_id'])
-                    ->setIsTransactionClosed(0);
-
-                    $order->addStatusHistoryComment($message,$status)
-                    ->setIsCustomerNotified(false)
-                    ->save();
-                    }*/
-
                     $payment = $order->getPayment();
                     $payment->setTransactionId($data['invoice_id'])
                     ->setIsTransactionClosed(0);
