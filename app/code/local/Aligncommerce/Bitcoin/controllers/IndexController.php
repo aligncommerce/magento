@@ -11,23 +11,6 @@
                     $order = Mage::getModel('sales/order')->loadByIncrementId($data['order_id']);
                     if($data['status'] == 'success' || $data['status'] == 'processing' ){
 
-                        /*if($data['checkout_type'] == 'btc'){
-                            $status = Mage_Sales_Model_Order::STATE_PROCESSING;
-                            $order->setState($status, true)->save();
-                            $orderId = $order->getIncrementId();
-                            $invoiceId = Mage::getModel('sales/order_invoice_api')->create($orderId, array());
-                        }else{
-                            $status = Mage_Sales_Model_Order::STATE_NEW;
-                            $order->setState($status, true)->save();
-                        }
-
-                        $payment = $order->getPayment();
-                        $payment->setTransactionId($data['invoice_id'])
-                        ->setIsTransactionClosed(0);
-
-                        $order->addStatusHistoryComment($message,$status)
-                        ->setIsCustomerNotified(false)
-                        ->save();*/
                         echo Mage::getUrl('checkout/onepage/success');
                     }
                     elseif($data['status'] == 'fail' || $data['status'] == 'cancel')

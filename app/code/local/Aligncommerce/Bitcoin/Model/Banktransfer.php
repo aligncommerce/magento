@@ -46,7 +46,7 @@
 
 
         public function CreateInvoiceAndRedirect($payment, $amount)
-        {
+        {           
             $username   = Mage::getStoreConfig('payment/aligncommerce_banktransfer/username');
             $password   = Mage::getStoreConfig('payment/aligncommerce_banktransfer/password');
             $client_id  = Mage::getStoreConfig('payment/aligncommerce_banktransfer/client_id');
@@ -60,11 +60,28 @@
             }
 
             $access_token = $auth['access_token'];
-            $product_details   = Mage::helper('bitcoin')->getOrderedProductDetails($payment);
-            $buyer_info = Mage::helper('bitcoin')->getBillingInfo($payment);
+
 
             $order   = $payment->getOrder();
             $orderId = $order->getIncrementId();
+
+            $product_details   = Mage::helper('bitcoin')->getOrderedProductDetails($order);
+            $buyer_info    = Mage::helper('bitcoin')->getBillingInfo($order);
+            $shipping_info = Mage::helper('bitcoin')->getShippingInfo($order);   
+
+            $shippingData = array(
+                'description' => $order->getShippingDescription(),
+                'amount' => $order->getShippingAmount()
+            );
+            $taxData = array(
+                'description' => "Tax",
+                'amount' => $order->getTaxAmount()
+            );
+
+            $discountData = array(
+                'description' => 'Discount',
+                'amount_off' => abs($order->getDiscountAmount())
+            );
 
             $apiconfig = $this->apiConfig();
             $currency = $apiconfig->getCurrency($username , $password );
@@ -82,15 +99,27 @@
                 'buyer_info'    => $buyer_info,
                 'currency'      => $currency_id,
                 'order_id'      => $orderId,
+                'shipping'      => $shippingData,
+                'shipping_address' => $shipping_info
 
             );
+
+            if($order->getTaxAmount() > 0)
+            {
+                $post_data['tax_rate'] = $taxData;
+            }
+            if(abs($order->getDiscountAmount()) > 0)
+            {
+                $post_data['discount'] = $discountData;
+
+            }
 
 
             $invoice =  $apiconfig->createInvoice($username , $password , $access_token , $post_data);
             $payment->setIsTransactionPending(true);
 
             if($invoice['invoice']['error'] || !isset($invoice) || $invoice['invoice']['data']['invoice_url'] == null){
-                Mage::throwException($invoice['invoice']['error_message']);
+                Mage::throwException($invoice['invoice']['error_message'][0]);
             }
 
             $redirect_url = $invoice['invoice']['data']['invoice_url'];
